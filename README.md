@@ -1,7 +1,7 @@
 TempSense Pro - IoT Temperature Monitoring System
 TempSense Pro is an IoT-based temperature monitoring system built using the ESP32 microcontroller, DHT11 temperature sensor, and LCD display. This project continuously monitors ambient temperature and humidity, displays real-time data on an LCD, logs data to ThingSpeak, and sends temperature alerts via Telegram. When the temperature exceeds a specified threshold, the system activates an alert with both visual (LED) and sound (buzzer) notifications, along with a real-time message alert on Telegram.
 
-Table of Contents 
+#Table of Contents 
 - [Introduction](#introduction)
 - [Features](#features)
 - [Components](#components)
