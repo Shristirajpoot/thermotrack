@@ -11,17 +11,17 @@ Table of Contents
 - [Libraries Used](#libraries-used)
 - [License](#license)
 
-Introduction
+##Introduction
 This project aims to create a remote temperature monitoring solution ideal for smart home or environmental monitoring applications. Using the ESP32's Wi-Fi capability, it streams real-time temperature and humidity data to the cloud (ThingSpeak) and sends alerts to users via a Telegram bot. The built-in LCD display also provides instant readings of temperature and humidity.
 
-Features
+##Features
 Real-Time Monitoring: Continuously measures ambient temperature and humidity.
 LCD Display: Shows real-time data directly on an LCD for easy viewing.
 Cloud Logging: Sends data to ThingSpeak for monitoring over time.
 Telegram Alerts: Sends alerts to a Telegram bot when temperature exceeds the threshold.
 Visual and Sound Alerts: Activates an LED and buzzer when the temperature goes above the defined limit.
 
-Components
+##Components
 ESP32: Main microcontroller that connects to the Wi-Fi network and sends data to ThingSpeak and Telegram.
 DHT11 Temperature & Humidity Sensor: Reads temperature and humidity data.
 LCD Display: Shows temperature and humidity values.
@@ -30,7 +30,7 @@ LED: Provides a visual alert when the temperature is above the limit.
 ThingSpeak Account: For storing and visualizing temperature data.
 Telegram Bot: For sending temperature and humidity alerts to the user.
 
-Circuit Diagram
+##Circuit Diagram
 Connection Details:
 
 DHT11 Sensor:
@@ -48,7 +48,7 @@ Buzzer and LED:
 
 Buzzer and LED are connected to separate GPIO pins on the ESP32, with a shared GND connection.
 
-Setup Guide
+##Setup Guide
 1. ThingSpeak Setup
 Create a ThingSpeak account.
 Set up a new channel, and create fields for Temperature and Humidity.
@@ -62,7 +62,7 @@ Enter the Bot Token and Chat ID in the code.
 3. Wi-Fi Setup
 Enter your Wi-Fi SSID and Password in the code.
 
-How to Use
+##How to Use
 Upload the Code:
 
 Using the Arduino IDE, upload the provided code (main.cpp or TemperatureMonitor.ino) to the ESP32.
@@ -84,7 +84,7 @@ Telegram Commands:
 /Gettemp - Sends the current temperature reading.
 /Gethumi - Sends the current humidity reading.
 
-Libraries Used
+##Libraries Used
 WiFi.h - Manages Wi-Fi connectivity.
 ThingSpeak.h - Connects and sends data to the ThingSpeak server.
 WiFiClientSecure.h - Provides secure client functionality for HTTPS connections.
@@ -92,6 +92,6 @@ UniversalTelegramBot.h - Integrates with Telegram to send and receive messages.
 DHT.h - Manages data collection from the DHT11 sensor.
 Installation: You can install these libraries directly from the Arduino IDE’s Library Manager.
 
-License
+##License
 This project is licensed under the MIT License - see the LICENSE.md file for details.
 
