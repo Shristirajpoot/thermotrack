@@ -18,8 +18,8 @@ Thank you for considering contributing to the **TempSense Pro** project! Your co
    git push origin feature/add-telemetry
 6.**Submit a pull request**:Go to the original repository and submit a pull request to merge your changes into the main branch. Provide a clear explanation of what you have done.
 
-   # Code of Conduct
+# Code of Conduct
    By participating in this project, you agree to abide by the code of conduct outlined in CODE_OF_CONDUCT.md.
 
-   # Reporting Issues
+# Reporting Issues
    If you encounter any issues or have suggestions for improvements, please open an issue in the repository.
