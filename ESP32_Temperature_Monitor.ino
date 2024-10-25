@@ -19,7 +19,7 @@ unsigned long myChannelNumber = 2631017;  // ThingSpeak channel number
 const char * myWriteAPIKey = "EM0X5VLI8ZLDHD0F";  // API key for writing data to ThingSpeak
 
 // Define the Telegram bot token
-#define BOT_TOKEN "7381156475:AAG92ZtRMHxWOVHTHuHorgOwCASsUoF4Kwc"
+const char* BOT_TOKEN = std::getenv("BOT_TOKEN");
 String chid = "-4550456385";  // Chat ID for Telegram
 
 WiFiClientSecure secured_client;  // Create a secure Wi-Fi client
