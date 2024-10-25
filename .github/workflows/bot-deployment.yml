@@ -1,0 +1,27 @@
+name: Bot Deployment
+
+on:
+  push:
+    branches:
+      - main  # This workflow runs when changes are pushed to the main branch
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest  # The environment in which the job runs
+
+    steps:
+      - name: Check out the code
+        uses: actions/checkout@v2  # This action checks out the code from your repository
+
+      - name: Set up environment and run bot
+        env:
+          BOT_TOKEN: ${{ secrets.BOT_TOKEN }}  # Securely use the bot token from GitHub Secrets
+        run: |
+          echo "Starting bot with token from secrets"
+          
+          # Example: command to run your Arduino code
+          # Replace this with the actual command to run your code. For example:
+          platformio run --target upload --upload-port /dev/ttyUSB0
+          
+          # Note: This assumes you're using PlatformIO to manage the ESP32/Arduino code.
+          # Adjust this command according to the specific toolchain you're using.
