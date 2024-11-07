@@ -16,6 +16,8 @@ TempSense Pro is an IoT-based temperature monitoring system built using the ESP3
 # Introduction
 
 This project aims to create a remote temperature monitoring solution ideal for smart home or environmental monitoring applications. Using the ESP32's Wi-Fi capability, it streams real-time temperature and humidity data to the cloud (ThingSpeak) and sends alerts to users via a Telegram bot. The built-in LCD display also provides instant readings of temperature and humidity.
+![Look](https://github.com/user-attachments/assets/920ba5e2-f2f9-4361-a98d-e2d93d6e4e8a)
+
 
 # Features
 
@@ -50,6 +52,9 @@ This project aims to create a remote temperature monitoring solution ideal for s
   - SDA -> SDA on ESP32
 - **Buzzer and LED**:
   - Buzzer and LED are connected to separate GPIO pins on the ESP32, with a shared GND connection.
+    The circuit diagram can be depicted as :
+![circuit diagram](https://github.com/user-attachments/assets/a43efcdd-6e1f-430a-b82c-d794a80559ac)
+
 
 # Setup Guide
 
@@ -58,6 +63,9 @@ This project aims to create a remote temperature monitoring solution ideal for s
 1. Create a ThingSpeak account.
 2. Set up a new channel, and create fields for Temperature and Humidity.
 3. Note down the Channel ID and Write API Key as you'll need to enter them in the code.
+
+   ![ThingSpeak](https://github.com/user-attachments/assets/d387abde-6721-4503-8530-27401b26fc40)
+
 
 ## Telegram Bot Setup
 
@@ -87,6 +95,8 @@ If the temperature exceeds 34°C, the system triggers an alert:
 - The LED lights up.
 - The buzzer sounds an alert.
 - A message is sent to the Telegram bot.
+  ![TelegramBot](https://github.com/user-attachments/assets/6d2ac8b6-6b79-424a-8b88-4b8d2e796557)
+
 
 ### Telegram Commands:
 - `/Gettemp` - Sends the current temperature reading.
