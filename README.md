@@ -1,6 +1,6 @@
-# TempSense Pro - IoT Temperature Monitoring System 
+# Thermotrack- IoT Temperature Monitoring System 
 
-TempSense Pro is an IoT-based temperature monitoring system built using the ESP32 microcontroller, DHT11 temperature sensor, and LCD display. This project continuously monitors ambient temperature and humidity, displays real-time data on an LCD, logs data to ThingSpeak, and sends temperature alerts via Telegram. When the temperature exceeds a specified threshold, the system activates an alert with both visual (LED) and sound (buzzer) notifications, along with a real-time message alert on Telegram.
+Thermotrack is an IoT-based temperature and humidity monitoring system designed to provide real-time data tracking, cloud integration, and alerting functionality. Built with the ESP32 microcontroller, DHT11 temperature sensor, and an LCD display, this system continuously monitors ambient conditions, stores data on ThingSpeak, and sends alerts through Telegram when the temperature exceeds a set threshold.
 
 # Table of Contents
 
@@ -88,7 +88,7 @@ Using the Arduino IDE, upload the provided code (main.cpp or TemperatureMonitor.
 Once powered, the ESP32 will connect to Wi-Fi, retrieve time, and start reading temperature and humidity data from the DHT11 sensor. The data will display on the LCD and automatically update on ThingSpeak.
 
 ### Monitor Data Remotely:
-You can check temperature and humidity data in real time on your ThingSpeak channel.
+You can view temperature and humidity data in real time on your ThingSpeak channel.
 
 ### Receive Alerts:
 If the temperature exceeds 34°C, the system triggers an alert:
