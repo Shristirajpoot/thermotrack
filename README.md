@@ -1,4 +1,4 @@
-# 🌡️ ThermoTrack – IoT Temperature & Humidity Monitor ❄️☀️  
+# 🌡️ ThermoTrack – IoT Temperature & Humidity Monitor 
 > Real-time sensing, cloud logging, and instant Telegram alerts — all on an ESP32.
 
 ![GitHub Repo stars](https://img.shields.io/github/stars/Shristirajpoot/thermotrack?style=social)
