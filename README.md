@@ -1,10 +1,14 @@
-# Thermotrack- IoT Temperature Monitoring System 
+# 🌡️ ThermoTrack – IoT Temperature & Humidity Monitor ❄️☀️  
+> Real-time sensing, cloud logging, and instant Telegram alerts — all on an ESP32.
 
-Thermotrack is an IoT-based temperature and humidity monitoring system designed to provide real-time data tracking, cloud integration, and alerting functionality. Built with the ESP32 microcontroller, DHT11 temperature sensor, and an LCD display, this system continuously monitors ambient conditions, stores data on ThingSpeak, and sends alerts through Telegram when the temperature exceeds a set threshold.
+![GitHub Repo stars](https://img.shields.io/github/stars/Shristirajpoot/thermotrack?style=social)
+![GitHub last commit](https://img.shields.io/github/last-commit/Shristirajpoot/thermotrack?color=brightgreen)
+![License](https://img.shields.io/github/license/Shristirajpoot/thermotrack)
 
-# Table of Contents
+---
 
-- [Introduction](#introduction)
+## 📚 Table of Contents
+- [Overview](#overview)
 - [Features](#features)
 - [Components](#components)
 - [Circuit Diagram](#circuit-diagram)
@@ -13,29 +17,35 @@ Thermotrack is an IoT-based temperature and humidity monitoring system designed 
 - [Libraries Used](#libraries-used)
 - [License](#license)
 
-# Introduction
+---
 
-This project aims to create a remote temperature monitoring solution ideal for smart home or environmental monitoring applications. Using the ESP32's Wi-Fi capability, it streams real-time temperature and humidity data to the cloud (ThingSpeak) and sends alerts to users via a Telegram bot. The built-in LCD display also provides instant readings of temperature and humidity.
-![Look](https://github.com/user-attachments/assets/920ba5e2-f2f9-4361-a98d-e2d93d6e4e8a)
+## 📝 Overview
+**ThermoTrack** is an IoT-based system that **monitors temperature and humidity**, pushes readings to **ThingSpeak**, and sends critical-threshold alerts through a **Telegram bot**. It’s perfect for smart homes, greenhouses, server rooms, or any scenario where timely environmental awareness matters.
+
+<img src="https://github.com/user-attachments/assets/920ba5e2-f2f9-4361-a98d-e2d93d6e4e8a" alt="LCD + Sensor" width="400"/>
 
 
-# Features
+---
 
-- **Real-Time Monitoring**: Continuously measures ambient temperature and humidity.
-- **LCD Display**: Shows real-time data directly on an LCD for easy viewing.
-- **Cloud Logging**: Sends data to ThingSpeak for monitoring over time.
-- **Telegram Alerts**: Sends alerts to a Telegram bot when temperature exceeds the threshold.
-- **Visual and Sound Alerts**: Activates an LED and buzzer when the temperature goes above the defined limit.
+## 🌟 Features
+- 📈 **Real-time monitoring** on LCD  
+- ☁️ **Cloud logging** with ThingSpeak  
+- 📲 **Telegram alerts** above 34 °C  
+- 🔔 **Visual & audible** (LED + buzzer) warnings  
+- 🔌 **Wi-Fi-enabled** via ESP32  
 
-# Components
+---
+## 🔩 Components
+| Part | Role |
+|------|------|
+| ESP32 | Wi-Fi microcontroller |
+| DHT11 | Temp + humidity sensor |
+| 16×2 LCD | On-device read-out |
+| LED & Buzzer | Local alerts |
+| ThingSpeak | Cloud dashboard |
+| Telegram Bot | Remote notifications |
 
-- **ESP32**: Main microcontroller that connects to the Wi-Fi network and sends data to ThingSpeak and Telegram.
-- **DHT11 Temperature & Humidity Sensor**: Reads temperature and humidity data.
-- **LCD Display**: Shows temperature and humidity values.
-- **Buzzer**: Sounds an alert if the temperature exceeds the threshold.
-- **LED**: Provides a visual alert when the temperature is above the limit.
-- **ThingSpeak Account**: For storing and visualizing temperature data.
-- **Telegram Bot**: For sending temperature and humidity alerts to the user.
+---
 
 # Circuit Diagram
 
@@ -52,66 +62,68 @@ This project aims to create a remote temperature monitoring solution ideal for s
   - SDA -> SDA on ESP32
 - **Buzzer and LED**:
   - Buzzer and LED are connected to separate GPIO pins on the ESP32, with a shared GND connection.
-    The circuit diagram can be depicted as :
-![circuit diagram](https://github.com/user-attachments/assets/a43efcdd-6e1f-430a-b82c-d794a80559ac)
+  
+   <img src="https://github.com/user-attachments/assets/a43efcdd-6e1f-430a-b82c-d794a80559ac" alt="Circuit Diagram" width="500"/>
 
 
-# Setup Guide
+---
 
-## ThingSpeak Setup
+## 🚀 Setup Guide
 
-1. Create a ThingSpeak account.
-2. Set up a new channel, and create fields for Temperature and Humidity.
-3. Note down the Channel ID and Write API Key as you'll need to enter them in the code.
-
-   ![ThingSpeak](https://github.com/user-attachments/assets/d387abde-6721-4503-8530-27401b26fc40)
-
-
-## Telegram Bot Setup
-
-1. Open Telegram and search for the BotFather (@BotFather).
-2. Start a chat with BotFather and create a new bot by typing `/newbot`.
-3. Follow the instructions to get your Bot Token.
-4. Create a chat with your bot and note down your Chat ID (you can use a bot to retrieve your own Chat ID).
-5. Enter the Bot Token and Chat ID in the code.
-
-## Wi-Fi Setup
-
-Enter your Wi-Fi SSID and Password in the code.
-
-# How to Use
-
-### Upload the Code:
-Using the Arduino IDE, upload the provided code (main.cpp or TemperatureMonitor.ino) to the ESP32.
-
-### Run the System:
-Once powered, the ESP32 will connect to Wi-Fi, retrieve time, and start reading temperature and humidity data from the DHT11 sensor. The data will display on the LCD and automatically update on ThingSpeak.
-
-### Monitor Data Remotely:
-You can view temperature and humidity data in real time on your ThingSpeak channel.
-
-### Receive Alerts:
-If the temperature exceeds 34°C, the system triggers an alert:
-- The LED lights up.
-- The buzzer sounds an alert.
-- A message is sent to the Telegram bot.
-  ![TelegramBot](https://github.com/user-attachments/assets/6d2ac8b6-6b79-424a-8b88-4b8d2e796557)
+### 1️⃣ ThingSpeak
+1. Create a channel with **Temperature** & **Humidity** fields.  
+2. Note your **Channel ID** and **Write API Key**.  
+  <img src="https://github.com/user-attachments/assets/d387abde-6721-4503-8530-27401b26fc40" alt="ThingSpeak" width="400"/>
 
 
-### Telegram Commands:
-- `/Gettemp` - Sends the current temperature reading.
-- `/Gethumi` - Sends the current humidity reading.
+### 2️⃣ Telegram Bot
+1. Talk to **@BotFather** → `/newbot` → get **Bot Token**.  
+2. DM your bot once, then obtain your **Chat ID**.  
+3. Add both token & chat ID to the code.
 
-# Libraries Used
+### 3️⃣ Wi-Fi & Code
+- Open **ESP32_Temperature_Monitor.ino** in Arduino IDE.  
+- Fill in `WIFI_SSID`, `PASSWORD`, ThingSpeak keys, and Telegram creds.  
+- Flash to your ESP32.
 
-- `WiFi.h` - Manages Wi-Fi connectivity.
-- `ThingSpeak.h` - Connects and sends data to the ThingSpeak server.
-- `WiFiClientSecure.h` - Provides secure client functionality for HTTPS connections.
-- `UniversalTelegramBot.h` - Integrates with Telegram to send and receive messages.
-- `DHT.h` - Manages data collection from the DHT11 sensor.
+---
 
-**Installation**: You can install these libraries directly from the Arduino IDE’s Library Manager.
+## ▶️ How to Use
 
-# License
+1. Power the ESP32 — it connects to Wi-Fi, starts logging, and shows readings on the LCD.  
+2. **Watch data** on your ThingSpeak dashboard in real time.  
+3. **Receive alerts** when temperature > 34 °C: LED + buzzer + Telegram message.  
+<img src="https://github.com/user-attachments/assets/6d2ac8b6-6b79-424a-8b88-4b8d2e796557" alt="TelegramBot" width="350"/>
 
-This project is licensed under the MIT License - see the LICENSE.md file for details.
+
+### Telegram Commands
+| Command | Response |
+|---------|----------|
+| `/Gettemp` | Current temperature |
+| `/Gethumi` | Current humidity |
+
+---
+
+## 📚 Libraries Used
+- `WiFi.h` – Wi-Fi connectivity  
+- `ThingSpeak.h` – Cloud REST client  
+- `WiFiClientSecure.h` – HTTPS support  
+- `UniversalTelegramBot.h` – Telegram API  
+- `DHT.h` – Sensor driver  
+
+> **Install** via *Arduino IDE → Library Manager*.
+
+---
+## 👩‍💻 Author
+### Shristi Rajpoot
+- 📧 Email: shristirajpoot369@gmail.com
+- 🔗 GitHub: @Shristirajpoot
+
+---
+
+## 📜 License
+Distributed under the **MIT License** — see [`LICENSE`](./LICENSE).
+
+---
+
+### ⭐ Like what you see? **Star** the repo, fork it, or open an issue — contributions welcome!
